@@ -29,7 +29,7 @@
   <div class="form-group">
     <%= f.label :issue_type, "Issue_type" %>
     <!--<%= f.number_field :priority %>-->
-    <%= f.select :issue_type, Bug.issue_types.keys, selected: @bug.issue_type, class: "form-control" %>
+    <%= f.select :issue_type, Bug.issue_types.keys, selected: @bug.issue_type, class: "dropdown-menu" %>
   </div>
 
   <div class="form-group">
