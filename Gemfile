@@ -54,15 +54,10 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 group :production do
  gem 'pg', '~> 0.20'
  gem 'rails_12factor'
-end
-
-group :development, :test do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'sqlite3'
 end
