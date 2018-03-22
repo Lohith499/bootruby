@@ -35,10 +35,14 @@
           <%= link_to bug, class: "btn btn-default btn-sm" do %>
           <i class="glyphicon glyphicon-eye-open"></i> Show
           <% end %>
-          <%= link_to edit_bug_path(bug), class: "btn btn-default btn-sm" do %>
+          </td>
+          <td class="col-md-3">
+            <%= link_to edit_bug_path(bug), class: "btn btn-default btn-sm" do %>
           <i class="glyphicon glyphicon-eye-open"></i> Edit
           <% end %>
-          <%= link_to bug, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+          </td>
+          <td class="col-md-3">
+            <%= link_to bug, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
           <i class="glyphicon glyphicon-eye-open"></i> Delete
           <% end %>
         </td>
