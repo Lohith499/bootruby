@@ -24,5 +24,8 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_bug_path(@bug) %> |
-<%= link_to 'Back', bugs_path %>
+
+<div class="container">
+<button type="button" class="btn btn-success"><%= link_to 'Edit', edit_bug_path(@bug) %></button>|
+<button type="button" class="btn btn-info"><%= link_to 'Back', bugs_path %></button>
+</div>
