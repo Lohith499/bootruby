@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
-
+#<p id="notice"><%= notice %></p>
+<% if !notice.blank? %>
+    <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
 <h1>Listing Bugs</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Issue type</th>
-      <th>Priority</th>
-      <th>Status</th>
+      <th class="col-md-3">Title</th>
+      <th class="col-md-3">Description</th>
+      <th class="col-md-3">Issue type</th>
+      <th class="col-md-3">Priority</th>
+      <th class="col-md-3">Status</th>
       <th>
         user
       </th>
@@ -20,18 +22,26 @@
   <tbody>
     <% @bugs.each do |bug| %>
       <tr>
-        <td><%= bug.title %></td>
-        <td><%= bug.description %></td>
-        <td><%= bug.issue_type %></td>
-        <td><%= bug.priority %></td>
-        <td><%= bug.status %></td>
+        <td class="col-md-3"><%= bug.title %></td>
+        <td class="col-md-3"><%= bug.description %></td>
+        <td class="col-md-3"><%= bug.issue_type %></td>
+        <td class="col-md-3"><%= bug.priority %></td>
+        <td class="col-md-3"><%= bug.status %></td>
 
-        <td>
+        <td class="col-md-3">
            <%= (bug.user.try(:lname)) || "NA" %>
         </td>
-        <td><%= link_to 'Show', bug %></td>
-        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="col-md-3">
+          <%= link_to bug, class: "btn btn-default btn-sm" do %>
+          <i class="glyphicon glyphicon-eye-open"></i> Show
+          <% end %>
+          <%= link_to edit_bug_path(bug), class: "btn btn-default btn-sm" do %>
+          <i class="glyphicon glyphicon-eye-open"></i> Edit
+          <% end %>
+          <%= link_to bug, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+          <i class="glyphicon glyphicon-eye-open"></i> Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Bug', new_bug_path %>
+<%= link_to 'New Bug', new_bug_path,:class => "btn btn-primary" %>
