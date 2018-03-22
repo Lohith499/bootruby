@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :title. "Title" %>
+    <%= f.label :title, "Title" %>
     <%= f.text_field :title, id: :bug_title, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :description. "Description" %>
+    <%= f.label :description, "Description" %>
     <%= f.text_area :description, id: :bug_description, class: "form-control" %>
   </div>
 
@@ -39,7 +39,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :user_id. "User_Id" %>
+    <%= f.label :user_id, "User_Id" %>
     <%= f.select :user_id,
       options_for_select(User.all.collect {|u| ["#{u.lname}, #{u.fname}", u.id]},
       selected: (@bug.user ? @bug.user.id : User.first.id)), {},{ class: "form form-group form-control" } %>
