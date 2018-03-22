@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lname:</strong>
-  <%= @user.lname %>
-</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="col-md-3">Last Name</th>
+      <th class="col-md-3">First Name</th>
+      <th class="col-md-3">Email</th>
+      <th class="col-md-3">Thumbnail</th>
+      <th class="col-md-3">Status</th>
+      <th class="col-md-3">User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="col-md-3"><%= @user.lname %></td>
+      <td class="col-md-3"><%= @user.fname %></td>
+      <td class="col-md-3"><%= @user.email %></td>
+      <td class="col-md-3"><%= @user.thumbnail %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Fname:</strong>
-  <%= @user.fname %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Thumbnail:</strong>
-  <%= @user.thumbnail %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="container">
+<button type="button" class="btn btn-success"><%= link_to 'Edit', edit_user_path(@user) %></button>|
+<button type="button" class="btn btn-info"><%= link_to 'Back', users_path %></button>
+</div>
