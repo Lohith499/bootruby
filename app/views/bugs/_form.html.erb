@@ -11,41 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title. "Title" %>
+    <%= f.text_field :title, id: :bug_title, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description. "Description" %>
+    <%= f.text_area :description, id: :bug_description, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :priority %><br>
+  <div class="form-group">
+    <%= f.label :priority, "Priority" %>
     <!--<%= f.number_field :issue_type %>-->
-    <%= f.select :priority, Bug.priorities.keys, selected: @bug.priority %>
+    <%= f.select :priority, Bug.priorities.keys, selected: @bug.priority , { class: "form form-group form-control" } %>
   </div>
 
-  <div class="field">
-    <%= f.label :issue_type %><br>
+  <div class="form-group">
+    <%= f.label :issue_type, "Issue_type" %>
     <!--<%= f.number_field :priority %>-->
-    <%= f.select :issue_type, Bug.issue_types.keys, selected: @bug.issue_type %>
+    <%= f.select :issue_type, Bug.issue_types.keys, selected: @bug.issue_type, { class: "form form-group form-control" } %>
   </div>
 
-  <div class="field">
-    <%= f.label :status %><br>
+  <div class="form-group">
+    <%= f.label :status," Status" %>
     <!--<%= f.number_field :status %>-->
-    <%= f.select :status, Bug.statuses.keys, selected: @bug.status %>
+    <%= f.select :status, Bug.statuses.keys, selected: @bug.status. { class: "form form-group form-control" } %>
   </div>
 
-  <div class="field">
-    <%= f.label :user_id %>
+  <div class="form-group">
+    <%= f.label :user_id. "User_Id" %>
     <%= f.select :user_id,
       options_for_select(User.all.collect {|u| ["#{u.lname}, #{u.fname}", u.id]},
-      selected: (@bug.user ? @bug.user.id : User.first.id)), {} %>
+      selected: (@bug.user ? @bug.user.id : User.first.id)), {},{ class: "form form-group form-control" } %>
   </div>
-  
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
