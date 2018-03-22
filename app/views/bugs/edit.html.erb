@@ -2,5 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @bug,class: "btn btn-danger" %> |
-<%= link_to 'Back', bugs_path,class: "btn btn-danger" %>
+
+<div class="container">
+<button type="button" class="btn btn-success"><%= link_to 'Show', @bug,class: "btn btn-danger" %></button>
+<button type="button" class="btn btn-info"><%= link_to 'Back', bugs_path,class: "btn btn-danger" %></button>
+</div>
